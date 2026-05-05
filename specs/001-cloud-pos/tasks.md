@@ -44,6 +44,8 @@
 - [ ] T010 Setup database schema initialization and sample data seeding
 - [ ] T011 Create base API router structure in backend/app/main.py
 - [ ] T012 Configure CORS and basic middleware for tablet frontend access
+- [ ] T013 [P] Implement JWT authentication with role-based access (admin/cashier) in backend/app/auth.py
+- [ ] T014 [P] Add user role enforcement middleware for protected endpoints
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -57,20 +59,20 @@
 
 ### Tests for User Story 1 ⚠️
 
-- [ ] T013 [P] [US1] Unit test for Product model validation in tests/backend/unit/test_product_model.py
-- [ ] T014 [P] [US1] Integration test for product CRUD operations in tests/backend/integration/test_product_api.py
+- [ ] T017 [P] [US1] Unit test for Product model validation in tests/backend/unit/test_product_model.py
+- [ ] T018 [P] [US1] Integration test for product CRUD operations in tests/backend/integration/test_product_api.py
 
 ### Implementation for User Story 1
 
-- [ ] T015 [US1] Implement GET /products endpoint in backend/app/api/products.py
-- [ ] T016 [US1] Add product search and pagination to GET /products
-- [ ] T017 [US1] Implement POST /products for creating new products
-- [ ] T018 [US1] Implement PUT /products/{id} for updating products
-- [ ] T019 [US1] Implement DELETE /products/{id} for removing products
-- [ ] T020 [US1] Create ProductList component in frontend/src/components/ProductList.tsx
-- [ ] T021 [US1] Create ProductForm component for add/edit in frontend/src/components/ProductForm.tsx
-- [ ] T022 [US1] Create AdminPage for product management in frontend/src/pages/AdminPage.tsx
-- [ ] T023 [US1] Integrate product API calls in frontend/src/services/api.ts
+- [ ] T017 [US1] Implement GET /products endpoint in backend/app/api/products.py
+- [ ] T018 [US1] Add product search and pagination to GET /products
+- [ ] T019 [US1] Implement POST /products for creating new products
+- [ ] T020 [US1] Implement PUT /products/{id} for updating products
+- [ ] T021 [US1] Implement DELETE /products/{id} for removing products
+- [ ] T022 [US1] Create ProductList component in frontend/src/components/ProductList.tsx
+- [ ] T023 [US1] Create ProductForm component for add/edit in frontend/src/components/ProductForm.tsx
+- [ ] T024 [US1] Create AdminPage for product management in frontend/src/pages/AdminPage.tsx
+- [ ] T025 [US1] Integrate product API calls in frontend/src/services/api.ts
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -84,18 +86,18 @@
 
 ### Tests for User Story 2 ⚠️
 
-- [ ] T024 [P] [US2] Unit test for checkout transaction logic in tests/backend/unit/test_checkout_service.py
-- [ ] T025 [P] [US2] Integration test for POST /checkout endpoint in tests/backend/integration/test_checkout_api.py
+- [ ] T026 [P] [US2] Unit test for checkout transaction logic in tests/backend/unit/test_checkout_service.py
+- [ ] T027 [P] [US2] Integration test for POST /checkout endpoint in tests/backend/integration/test_checkout_api.py
 
 ### Implementation for User Story 2
 
-- [ ] T026 [US2] Implement POST /checkout endpoint with transaction in backend/app/api/checkout.py
-- [ ] T027 [US2] Add inventory validation and deduction in checkout service
-- [ ] T028 [US2] Create Cart component for item selection in frontend/src/components/Cart.tsx
-- [ ] T029 [US2] Create CheckoutPage with total calculation in frontend/src/pages/CheckoutPage.tsx
-- [ ] T030 [US2] Create SuccessPage for order confirmation in frontend/src/pages/SuccessPage.tsx
-- [ ] T031 [US2] Implement cart state management in frontend/src/services/cart.ts
-- [ ] T032 [US2] Add checkout API integration in frontend/src/services/api.ts
+- [ ] T028 [US2] Implement POST /checkout endpoint with transaction in backend/app/api/checkout.py
+- [ ] T029 [US2] Add inventory validation and deduction in checkout service
+- [ ] T030 [US2] Create Cart component for item selection in frontend/src/components/Cart.tsx
+- [ ] T031 [US2] Create CheckoutPage with total calculation in frontend/src/pages/CheckoutPage.tsx
+- [ ] T032 [US2] Create SuccessPage for order confirmation in frontend/src/pages/SuccessPage.tsx
+- [ ] T033 [US2] Implement cart state management in frontend/src/services/cart.ts
+- [ ] T034 [US2] Add checkout API integration in frontend/src/services/api.ts
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -109,19 +111,19 @@
 
 ### Tests for User Story 3 ⚠️
 
-- [ ] T033 [P] [US3] Unit test for order status updates in tests/backend/unit/test_order_model.py
-- [ ] T034 [P] [US3] Integration test for orders API in tests/backend/integration/test_orders_api.py
+- [ ] T035 [P] [US3] Unit test for order status updates in tests/backend/unit/test_order_model.py
+- [ ] T036 [P] [US3] Integration test for orders API in tests/backend/integration/test_orders_api.py
 
 ### Implementation for User Story 3
 
-- [ ] T035 [US3] Implement GET /orders endpoint in backend/app/api/orders.py
-- [ ] T036 [US3] Implement GET /orders/{id} for order details
-- [ ] T037 [US3] Add order search and pagination to GET /orders
-- [ ] T038 [US3] Implement refund logic for order status updates
-- [ ] T039 [US3] Create OrderHistory component in frontend/src/components/OrderHistory.tsx
-- [ ] T040 [US3] Create OrderDetail component for viewing orders
-- [ ] T041 [US3] Add refund functionality to order details
-- [ ] T042 [US3] Integrate orders API in frontend/src/services/api.ts
+- [ ] T039 [US3] Implement GET /orders endpoint in backend/app/api/orders.py
+- [ ] T040 [US3] Implement GET /orders/{id} for order details
+- [ ] T041 [US3] Add order search and pagination to GET /orders
+- [ ] T042 [US3] Implement refund logic for order status updates
+- [ ] T043 [US3] Create OrderHistory component in frontend/src/components/OrderHistory.tsx
+- [ ] T044 [US3] Create OrderDetail component for viewing orders
+- [ ] T045 [US3] Add refund functionality to order details
+- [ ] T046 [US3] Integrate orders API in frontend/src/services/api.ts
 
 **Checkpoint**: At this point, User Stories 1, 2, AND 3 should work independently
 
@@ -135,11 +137,11 @@
 
 ### Implementation for User Story 5
 
-- [ ] T043 [US5] Add offline detection in frontend/src/services/api.ts
-- [ ] T044 [US5] Implement local storage queue for offline orders
-- [ ] T045 [US5] Add sync mechanism for queued orders on reconnection
-- [ ] T046 [US5] Update checkout flow to handle offline cash payments
-- [ ] T047 [US5] Add offline status indicator in frontend UI
+- [ ] T045 [US5] Add offline detection in frontend/src/services/api.ts
+- [ ] T046 [US5] Implement local storage queue for offline orders
+- [ ] T047 [US5] Add sync mechanism for queued orders on reconnection
+- [ ] T048 [US5] Update checkout flow to handle offline cash payments
+- [ ] T049 [US5] Add offline status indicator in frontend UI
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -149,12 +151,13 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T048 [P] Add error handling and user feedback across frontend components
-- [ ] T049 [P] Implement basic tablet-responsive styling in frontend/src/styles/
-- [ ] T050 [P] Add loading states and progress indicators
-- [ ] T051 Run end-to-end checkout flow validation
-- [ ] T052 Update quickstart.md with Docker Compose instructions
-- [ ] T053 Add basic performance monitoring for API endpoints
+- [ ] T050 [P] Add error handling and user feedback across frontend components
+- [ ] T051 [P] Implement basic tablet-responsive styling in frontend/src/styles/
+- [ ] T052 [P] Add loading states and progress indicators
+- [ ] T053 Run end-to-end checkout flow validation
+- [ ] T054 Update quickstart.md with Docker Compose instructions
+- [ ] T055 Add basic performance monitoring for API endpoints (response time logging)
+- [ ] T056 Add concurrency testing for 100+ simulated users on checkout endpoints
 
 ---
 

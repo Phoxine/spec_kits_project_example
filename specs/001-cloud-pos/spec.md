@@ -57,7 +57,7 @@ An admin can create and manage products, categories, SKUs, and inventory counts 
 
 ### User Story 2 - Fast Tablet Checkout (Priority: P1)
 
-A cashier can complete a sale from barcode scan to payment with minimal clicks, including discounts, tax calculation, and receipt generation.
+A cashier can complete a sale from barcode scan to payment with minimal clicks (target: <5 clicks for standard sale), including discounts, tax calculation, and receipt generation.
 
 **Why this priority**: The checkout flow is the core POS experience and must be fast and reliable for retail operations.
 
@@ -83,21 +83,6 @@ A cashier or admin can view past orders, issue refunds, and confirm that the ord
 
 1. **Given** a sale has been completed, **when** an authorized user searches order history by order number or date, **then** the order details are displayed.
 2. **Given** a sale is eligible for return, **when** the cashier issues a refund, **then** the refund is recorded, inventory is updated, and the sale status reflects the refund.
-
----
-
-### User Story 4 - Basic Customer Management (Priority: P2)
-
-An admin or cashier can create and select customer records with name, phone, and purchase history so repeat customers can be tracked.
-
-**Why this priority**: Customer records improve repeat sales, service, and receipt/email delivery.
-
-**Independent Test**: Verify that customer profiles can be created and linked to completed sales, and that purchase history is accessible.
-
-**Acceptance Scenarios**:
-
-1. **Given** no customer record exists for a buyer, **when** the cashier creates a new customer with name and phone, **then** the customer is saved and can be selected for checkout.
-2. **Given** a customer has past purchases, **when** the admin views their record, **then** their purchase history is visible.
 
 ---
 
@@ -132,13 +117,12 @@ The checkout experience continues when the online connection is interrupted, and
 - **FR-002**: System MUST allow admins to create and manage product categories and assign products to categories.
 - **FR-003**: System MUST track inventory levels and update stock when sales are completed or refunds are processed.
 - **FR-004**: System MUST provide a tablet-friendly checkout flow that supports barcode scanning, cart management, discounts, tax calculation, and final totals.
-- **FR-005**: System MUST support payment completion for cash, credit card, and mobile payment methods.
+- **FR-005**: System MUST support cash payment completion (credit card and mobile payment integration out of POC scope).
 - **FR-006**: System MUST generate receipts that can be printed or emailed after a sale.
 - **FR-007**: System MUST store order history and allow authorized users to view past sales with refund support.
-- **FR-008**: System MUST allow creation and lookup of customer records with name, phone, and purchase history.
-- **FR-009**: System MUST enforce two user roles: Admin with product and report access, and Cashier with sales-only access.
-- **FR-010**: System MUST provide offline fallback for checkout and local sale queueing when connectivity is interrupted, limited to cash payments only.
-- **FR-011**: System MUST authenticate users securely using JWT or equivalent token-based authentication and apply role-based access control.
+- **FR-008**: System MUST enforce two user roles: Admin with product and report access, and Cashier with sales-only access.
+- **FR-009**: System MUST provide offline fallback for checkout and local sale queueing when connectivity is interrupted, limited to cash payments only.
+- **FR-010**: System MUST authenticate users securely using JWT tokens with 1-hour expiration, refresh tokens for session extension, and role-based claims (admin/cashier) enforced on all protected endpoints.
 - **FR-012**: System MUST keep response times below 300ms for core product lookup and checkout actions under expected load.
 - **FR-013**: System MUST support at least 100 concurrent user sessions for normal retail operations.
 - **FR-014**: Optional support for a sales dashboard with daily revenue and top products may be added later.
@@ -152,7 +136,6 @@ The checkout experience continues when the online connection is interrupted, and
 - **Sale**: Represents a completed transaction with line items, discounts, taxes, payment details, receipt metadata, and status.
 - **Payment**: Represents payment information for a sale, including method type (cash, credit card, mobile payment) and settlement status.
 - **Receipt**: Represents the generated receipt details for a sale, including items, totals, customer contact, print status, and email status.
-- **Customer**: Represents a buyer with name, phone number, and linked purchase history.
 - **UserRole**: Represents role-based access for Admin and Cashier users.
 - **Store**: Optional entity for multi-store support that scopes products, orders, and inventory to a location.
 
@@ -168,7 +151,6 @@ The checkout experience continues when the online connection is interrupted, and
 - **SC-006**: Offline checkout works when connectivity drops during a sale and queued sales sync automatically when connectivity returns.
 - **SC-007**: Cashiers cannot access product management or admin reports, while admins can access both product management and sales reporting.
 - **SC-008**: Order history and refund records are searchable and accurately reflect adjustments after completed returns.
-- **SC-009**: Customer profiles can be created and linked to sales, with prior purchase history available from the customer record.
 
 ## Assumptions
 
