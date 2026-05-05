@@ -31,6 +31,12 @@ Optional:
 - Sales dashboard (daily revenue, top products)
 - Multi-store support"
 
+## Clarifications
+
+### Session 2026-05-05
+
+- Q: When checkout runs offline, which payment methods are supported? → A: Only cash payments are supported offline.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Product and Inventory Management (Priority: P1)
@@ -105,7 +111,7 @@ The checkout experience continues when the online connection is interrupted, and
 
 **Acceptance Scenarios**:
 
-1. **Given** the tablet loses connectivity during checkout, **when** the cashier completes the sale offline, **then** the sale is accepted locally and queued for synchronization.
+1. **Given** the tablet loses connectivity during checkout, **when** the cashier completes a cash sale offline, **then** the sale is accepted locally and queued for synchronization.
 2. **Given** connectivity is restored after offline checkout, **when** the system syncs queued sales, **then** the order history and inventory updates are reconciled.
 
 ---
@@ -131,7 +137,7 @@ The checkout experience continues when the online connection is interrupted, and
 - **FR-007**: System MUST store order history and allow authorized users to view past sales with refund support.
 - **FR-008**: System MUST allow creation and lookup of customer records with name, phone, and purchase history.
 - **FR-009**: System MUST enforce two user roles: Admin with product and report access, and Cashier with sales-only access.
-- **FR-010**: System MUST provide offline fallback for checkout and local sale queueing when connectivity is interrupted.
+- **FR-010**: System MUST provide offline fallback for checkout and local sale queueing when connectivity is interrupted, limited to cash payments only.
 - **FR-011**: System MUST authenticate users securely using JWT or equivalent token-based authentication and apply role-based access control.
 - **FR-012**: System MUST keep response times below 300ms for core product lookup and checkout actions under expected load.
 - **FR-013**: System MUST support at least 100 concurrent user sessions for normal retail operations.
@@ -168,7 +174,7 @@ The checkout experience continues when the online connection is interrupted, and
 
 - The product is a cloud-hosted web application intended for tablet browsers in small retail environments.
 - Payment integration will use secure, PCI-compliant providers; the exact provider selection is out of scope for this specification.
-- Offline fallback is limited to checkout operations and local synchronization of sales; full admin product management offline is out of scope for initial MVP.
+- Offline fallback is limited to checkout operations and local synchronization of cash sales; full admin product management offline is out of scope for initial MVP.
 - Sales dashboard and multi-store support are optional enhancements and may be scoped separately from the core MVP.
 - Secure authentication will be implemented as token-based access control with role enforcement for Admin and Cashier users.
 - Reporting requirements are limited to product availability, order history, and refund tracking for this feature set.
