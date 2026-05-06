@@ -23,11 +23,11 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create backend project structure per implementation plan
-- [ ] T002 Create frontend project structure per implementation plan
-- [ ] T003 Setup Docker Compose configuration for local development
-- [ ] T004 [P] Configure backend dependencies and requirements.txt
-- [ ] T005 [P] Configure frontend dependencies and package.json
+- [X] T001 Create backend project structure per implementation plan
+- [X] T002 Create frontend project structure per implementation plan
+- [X] T003 Setup Docker Compose configuration for local development
+- [X] T004 [P] Configure backend dependencies and requirements.txt
+- [X] T005 [P] Configure frontend dependencies and package.json
 
 ---
 
@@ -37,15 +37,15 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T006 Setup PostgreSQL database connection and session management in backend/app/db.py
-- [ ] T007 Create Product model in backend/app/models/product.py
-- [ ] T008 Create Order model in backend/app/models/order.py
-- [ ] T009 Create OrderItem model in backend/app/models/order_item.py
-- [ ] T010 Setup database schema initialization and sample data seeding
-- [ ] T011 Create base API router structure in backend/app/main.py
-- [ ] T012 Configure CORS and basic middleware for tablet frontend access
-- [ ] T013 [P] Implement JWT authentication with role-based access (admin/cashier) in backend/app/auth.py
-- [ ] T014 [P] Add user role enforcement middleware for protected endpoints
+- [X] T006 Setup PostgreSQL database connection and session management in backend/app/db.py
+- [X] T007 Create Product model in backend/app/models/product.py
+- [X] T008 Create Order model in backend/app/models/order.py
+- [X] T009 Create OrderItem model in backend/app/models/order_item.py
+- [X] T010 Setup database schema initialization and sample data seeding
+- [X] T011 Create base API router structure in backend/app/main.py
+- [X] T012 Configure CORS and basic middleware for tablet frontend access
+- [X] T013 [P] Implement JWT authentication with role-based access (admin/cashier) in backend/app/auth.py
+- [X] T014 [P] Add user role enforcement middleware for protected endpoints
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -59,20 +59,20 @@
 
 ### Tests for User Story 1 ⚠️
 
-- [ ] T017 [P] [US1] Unit test for Product model validation in tests/backend/unit/test_product_model.py
-- [ ] T018 [P] [US1] Integration test for product CRUD operations in tests/backend/integration/test_product_api.py
+- [X] T015 [P] [US1] Unit test for Product model validation in tests/backend/unit/test_product_model.py
+- [X] T016 [P] [US1] Integration test for product CRUD operations in tests/backend/integration/test_product_api.py
 
 ### Implementation for User Story 1
 
-- [ ] T017 [US1] Implement GET /products endpoint in backend/app/api/products.py
-- [ ] T018 [US1] Add product search and pagination to GET /products
-- [ ] T019 [US1] Implement POST /products for creating new products
-- [ ] T020 [US1] Implement PUT /products/{id} for updating products
-- [ ] T021 [US1] Implement DELETE /products/{id} for removing products
-- [ ] T022 [US1] Create ProductList component in frontend/src/components/ProductList.tsx
-- [ ] T023 [US1] Create ProductForm component for add/edit in frontend/src/components/ProductForm.tsx
-- [ ] T024 [US1] Create AdminPage for product management in frontend/src/pages/AdminPage.tsx
-- [ ] T025 [US1] Integrate product API calls in frontend/src/services/api.ts
+- [X] T017 [US1] Implement GET /products endpoint in backend/app/api/products.py
+- [X] T018 [US1] Add product search and pagination to GET /products
+- [X] T019 [US1] Implement POST /products for creating new products
+- [X] T020 [US1] Implement PUT /products/{id} for updating products
+- [X] T021 [US1] Implement DELETE /products/{id} for removing products
+- [X] T022 [US1] Create ProductList component in frontend/src/components/ProductList.tsx
+- [X] T023 [US1] Create ProductForm component for add/edit in frontend/src/components/ProductForm.tsx
+- [X] T024 [US1] Create AdminPage for product management in frontend/src/pages/AdminPage.tsx
+- [X] T025 [US1] Integrate product API calls in frontend/src/services/api.ts
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
