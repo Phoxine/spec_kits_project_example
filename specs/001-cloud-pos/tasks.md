@@ -137,7 +137,7 @@
 
 ### Implementation for User Story 5
 
-- [ ] T045 [US5] Add offline detection in frontend/src/services/api.ts
+- [ ] T057 [US5] Add offline detection in frontend/src/services/api.ts
 - [ ] T046 [US5] Implement local storage queue for offline orders
 - [ ] T047 [US5] Add sync mechanism for queued orders on reconnection
 - [ ] T048 [US5] Update checkout flow to handle offline cash payments

@@ -18,7 +18,7 @@ User Roles:
 - Cashier (process sales only)
 
 UI/UX:
-- Tablet-friendly interface
+- Tablet-friendly interface (minimum 44px touch targets, responsive to 768px+ widths, portrait/landscape orientation support)
 - Fast checkout flow (minimal clicks)
 - Offline fallback mode
 
@@ -123,6 +123,7 @@ The checkout experience continues when the online connection is interrupted, and
 - **FR-008**: System MUST enforce two user roles: Admin with product and report access, and Cashier with sales-only access.
 - **FR-009**: System MUST provide offline fallback for checkout and local sale queueing when connectivity is interrupted, limited to cash payments only.
 - **FR-010**: System MUST authenticate users securely using JWT tokens with 1-hour expiration, refresh tokens for session extension, and role-based claims (admin/cashier) enforced on all protected endpoints.
+- **FR-011**: System MUST support email delivery for receipts generated after a sale.
 - **FR-012**: System MUST keep response times below 300ms for core product lookup and checkout actions under expected load.
 - **FR-013**: System MUST support at least 100 concurrent user sessions for normal retail operations.
 - **FR-014**: Optional support for a sales dashboard with daily revenue and top products may be added later.

@@ -17,7 +17,7 @@ Build a tablet-first point-of-sale proof of concept using a React SPA frontend a
 **Testing**: pytest for backend, React Testing Library for frontend, optional Playwright/E2E for checkout flow  
 **Target Platform**: Linux server / VM plus modern tablet browsers  
 **Project Type**: Web application with backend API + SPA frontend  
-**Performance Goals**: Core REST endpoints return < 300ms in a local or small VM environment  
+**Performance Goals**: Core REST endpoints return < 500ms in a local or small VM environment (constitution-aligned POC budget)  
 **Constraints**: No offline mode in POC; cash-only checkout; REST-only API; single Docker server deployment  
 **Scale/Scope**: POC for ~100 concurrent small retail users, single-store checkout flow, no multi-user roles or SaaS features  
 
